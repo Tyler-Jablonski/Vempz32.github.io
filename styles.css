@@ -132,11 +132,19 @@ h2 {
 }
 
 /* Skills Section */
+/* Updated Flexbox layout */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     text-align: center;
+}
+
+.skills-grid .skill-group {
+    /* Sets each card to roughly 1/3 width minus gaps, capping at 3 per row */
+    flex: 1 1 calc(33.333% - 2rem);
+    min-width: 220px;
 }
 
 .skill-group h3 {
